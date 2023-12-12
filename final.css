@@ -1,0 +1,54 @@
+.bg-custom {
+	background-color: #110036;
+}
+body, html {
+	margin: 0;
+	background-color:#C3142D;
+}
+img {
+	box-sizing: border-box;
+	width: 200px;
+	background: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+#blackbar {
+	background-color: black;
+}
+#ovalcontainer {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 60%; 
+	padding: 50px;
+	color: #e0e0e0;
+	border: 2px solid #343a40; 
+	background-color:#950F22; 
+	border-radius: 50%; 
+	text-align: center;
+}
+
+#aboutme {
+	margin-top: 10px;
+}
+
+#neoncart {
+	width: 75px;
+}
+
+.ms-2 {
+	color: #C3142D;
+}
+
+#footer {
+	position: absolute;
+	padding-top: 5px;
+	right: 0; bottom: 0; left: 0;
+	color: rgb(154, 154, 154);
+	background-color: #110036;
+}
+
+h3 {
+	text-align: center;
+}
