@@ -1,7 +1,7 @@
 .bg-custom {
 	background-color: #110036;
 }
-body, html {
+#notReceipt {
 	margin: 0;
 	background-color:#C3142D;
 }

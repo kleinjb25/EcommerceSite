@@ -9,7 +9,7 @@
     <script src="itemsInCart.js"></script>
     <link rel="stylesheet" type="text/css" href="final.css"/>
   </head>
-  <body>
+  <body id = "notReceipt">
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Legend of the Optimal Wardrobe</a>
@@ -40,7 +40,7 @@
     </nav>
     <div class="container mt-5">
         <h2>Checkout</h2>
-        <form id="checkoutForm">
+        <form id="checkoutForm" onsubmit="return submitCheckout()">
             <div class="mb-3">
                 <label for="userName" class="form-label">Name</label>
                 <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
@@ -54,28 +54,26 @@
             </div>
             <div class="mb-3" id="cashAmountInput">
                 <label for="cashAmount" class="form-label">Cash Amount</label>
-                <input type="number" class="form-control" id="cashAmount" placeholder="Enter cash amount">
+                <input type="number" class="form-control" id="cashAmount" placeholder="Enter cash amount" required>
             </div>
             <div id="cardDetails" style="display: none;">
                 <div class="mb-3">
                     <label for="cardNumber" class="form-label">Card Number</label>
-                    <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number">
+                    <input type="text" class="form-control" id="cardNumber" placeholder="Enter card number" pattern="[0-9]{16}" title="Enter a valid 16-digit card number" >
                 </div>
                 <div class="mb-3">
                     <label for="expiryDate" class="form-label">Expiry Date</label>
-                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YYYY">
+                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YYYY" pattern="(0[1-9]|1[0-2])\/[0-9]{4}" title="Enter a valid expiry date in MM/YYYY format" >
                 </div>
                 <div class="mb-3">
                     <label for="securityCode" class="form-label">Security Code</label>
-                    <input type="text" class="form-control" id="securityCode" placeholder="Enter 3-digit code">
+                    <input type="text" class="form-control" id="securityCode" placeholder="Enter 3-digit code" pattern="[0-9]{3}" title="Enter a valid 3-digit security code" >
                 </div>
             </div>
             <p id="changeDisplay">Change: $<span id="changeAmount">0.00</span></p>
-            <button type="button" class="btn btn-primary" onclick="submitCheckout()">Submit</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
     <br>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256..."></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha256..."></script>
   </body>
 </html>

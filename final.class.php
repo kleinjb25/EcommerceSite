@@ -91,7 +91,7 @@ class final_rest
 
 	public static function createCart() {
 		try {
-			EXEC_SQL("INSERT INTO cart (closedDateTime) VALUES (null)");
+			EXEC_SQL("INSERT INTO cart (closedDateTime) VALUES (NULL)");
 			$retData["result"]=GET_SQL("SELECT last_insert_rowid() AS cartID");
 			$retData["status"]=0;
 			$retData["message"]="sql get query success";
@@ -137,7 +137,7 @@ class final_rest
 		try {
 			$retData["cart"]=GET_SQL("SELECT * FROM cart JOIN cartitem USING (cartID)
 			JOIN product USING (product_id)
-			WHERE cart.cartID=? AND cart.closedDateTime IS NULL ORDER BY
+			WHERE cart.cartID=? ORDER BY
 			Category,Subcategory,Title", $cartID);
 			$retdata["found"]=0;
 			$retData["message"] = "Returned all items in cart $CartId";
@@ -180,16 +180,27 @@ class final_rest
 		return json_encode ($retData);
 	}
 	public static function getSubcategories() {
-	try {
-		$retData["result"] = GET_SQL("SELECT DISTINCT subcategory FROM product");
-		$retData["status"] = 0;
-		$retData["message"] = "sql get query success";
-	} catch (Exception $e) {
-		$retData["status"] = 1;
-		$retData["message"] = $e->getMessage();
+		try {
+			$retData["result"] = GET_SQL("SELECT DISTINCT subcategory FROM product");
+			$retData["status"] = 0;
+			$retData["message"] = "sql get query success";
+		} catch (Exception $e) {
+			$retData["status"] = 1;
+			$retData["message"] = $e->getMessage();
+		}
+		return json_encode($retData);
 	}
 
-	return json_encode($retData);
+	public static function getItemQty($cartID, $product_id) {
+		try {
+			$retData["result"] = GET_SQL("SELECT qty FROM cartItem WHERE cartID=? AND product_id=?", $cartID, $product_id);
+			$retData["status"] = 0;
+			$retData["message"] = "sql get query success";
+		} catch (Exception $e) {
+			$retData["status"] = 1;
+			$retData["message"] = $e->getMessage();
+		}
+		return json_encode($retData);
 	}
 }
 ?>

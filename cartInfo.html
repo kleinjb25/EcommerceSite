@@ -9,7 +9,7 @@
     <script src="itemsInCart.js"></script>
     <link rel="stylesheet" type="text/css" href="final.css"/>
   </head>
-  <body>
+  <body id = "notReceipt" onload="getCartItems(0, itemsInCart)">
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Legend of the Optimal Wardrobe</a>
@@ -44,8 +44,5 @@
     </div>
     <br><br>
     <button id="saleButton" onclick="window.location.href='checkout.html'">Check Out</button>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256..."></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha256..."></script>
   </body>
 </html>

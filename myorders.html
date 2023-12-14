@@ -6,10 +6,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256..."></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha256..."></script>
-    <script src="final.js?rev=1"></script>
+    <script src="itemsInCart.js"></script>
     <link rel="stylesheet" type="text/css" href="final.css"/>
   </head>
-  <body>
+  <body id = "notReceipt" onload="findClosedCarts()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-custom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Legend of the Optimal Wardrobe</a>
@@ -31,10 +31,9 @@
         </div>
       </div>
     </nav>
-
-    <!-- Content goes here -->
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256..."></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha256..."></script>
+    <h3>Previous Orders</h3>
+    <br><br>
+    <div id="orderHistory">
+    </div>
   </body>
 </html>
