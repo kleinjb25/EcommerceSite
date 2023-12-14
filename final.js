@@ -30,7 +30,7 @@ function getProductJS(cat, sub, id, sortOption, minPrice, maxPrice) {
         $("#productList").empty();
         for (let i = 0; i < data.result.length; i++) {
             var productFigure = $('<figure style="display: inline-block; margin-right: 20px;">');
-            var productImage = $('<img style="display: block; margin-bottom: 10px; height: 200px;">');
+            var productImage = $('<img style="display: block; height: 200px;">');
             productImage.attr('src', data.result[i].image);
             var productCaption = $('<figcaption>');
             productCaption.append(data.result[i].title);
@@ -109,7 +109,7 @@ function updatecounter() {
         totalPrice = localStorage.getItem('totalPrice');
     }
     $('#itemCountBadge').text(itemCount);
-    $('#totalPrice').text(totalPrice);
+    $('#totalPrice').text(parseFloat(totalPrice).toFixed(2));
 }
 
 function populateSubcategories() {

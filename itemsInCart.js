@@ -21,7 +21,7 @@ $("#checkoutForm").submit(function(event) {
   function getContainerNameFromURL() {
     var url = window.location.href;
     if (url.includes("cartInfo")) {
-        return "itemsInCart";
+        return $("#itemsInCart");
     } else if (url.includes("printpage")) {
         return $("#itemsInOrder");
     } else {
@@ -54,7 +54,7 @@ function findClosedCarts() {
 var productFigure, productImage, productCaption;
 function printHTML(data, i, itemsContainer) {
     var productFigure = $('<figure id=' + data.cart[i].product_id + ' style="display: inline-block; margin-right: 20px;">');
-    var productImage = $('<img style="display: block; margin-bottom: 10px; height: 200px;">');
+    var productImage = $('<img style="display: block; height: 200px;">');
     productImage.attr('src', data.cart[i].image);
     productFigure.attr('data-product-id', data.cart[i].product_id);
     var productCaption = $('<figcaption>');
@@ -250,5 +250,5 @@ function updatecounter() {
     itemCount = localStorage.getItem('itemCount');
     totalPrice = localStorage.getItem('totalPrice');
     $('#itemCountBadge').text(itemCount);
-    $('#totalPrice').text(totalPrice);
+    $('#totalPrice').text(parseFloat(totalPrice).toFixed(2));
 }
