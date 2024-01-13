@@ -1,1 +1,1 @@
-This project was made in my Web Application Development class. It uses HTML, CSS, and Bootstrap to display the page, and Javascript with Ajax calls to a PHP file for the functionality. The user can add or remove items from a cart, check out that cart, and print any checkouts they previously made.
+(this probably doesn't work for anyone else other than me) To see the website: run putty with the set configuration (or just log into ceclnx01 server), go to localhost:8080/cse383_final and type in the username/password
